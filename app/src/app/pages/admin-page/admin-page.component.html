@@ -1,0 +1,19 @@
+<div *ngIf="me" class="p-4">
+  <h2 class="text-xl">Welcome {{ me.username }}</h2>
+  <section>
+    <h2 class="font-bold">Roles</h2>
+    <ul>
+      <li *ngFor="let role of me.roles">
+        <span>{{ role }}</span>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="font-bold">Scopes</h2>
+    <ul>
+      <li *ngFor="let scope of me.scopes">
+        <span>{{ scope }}</span>
+      </li>
+    </ul>
+  </section>
+</div>

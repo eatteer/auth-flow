@@ -1,0 +1,22 @@
+<div class="p-4">
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title mb-4">Login</h2>
+      <form [formGroup]="form" (ngSubmit)="submit()" autocomplete="off">
+        <input
+          formControlName="username"
+          type="text"
+          class="input input-bordered w-full mb-4"
+          placeholder="Username"
+        />
+        <input
+          formControlName="password"
+          type="password"
+          class="input input-bordered w-full mb-4"
+          placeholder="Password"
+        />
+        <button class="btn" [disabled]="form.invalid">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="navbar bg-base-100 px-4 border-b border-b-slate-300">
+  <h1 class="text-2xl font-bold navbar-start">
+    <span>Auth flow as</span> &nbsp; <span *ngIf="me">{{ me.username }}</span>
+  </h1>
+  <div class="navbar-center">
+    <ul>
+      <li>
+        <a
+          *ngIf="me?.roles?.includes('admin')"
+          routerLink="/admin"
+          class="link"
+        >
+          Admin page
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar-end flex gap-4">
+    <button *ngIf="!me" class="btn" routerLink="/login">Login</button>
+    <button *ngIf="me" class="btn" (click)="logout()">Logout</button>
+  </div>
+</div>
+<router-outlet></router-outlet>
